@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des vols</title>
+</head>
+<body>
+    <h1>Liste des vols</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom de l'avion</th>
+                <th>Type d'avion</th>
+                <th>Nombre de places</th>
+                <th>Ville de départ</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Heure de départ</th>
+                <th>Heure d'arrivée</th>
+                <th>Nombre d'escales</th>
+            </tr>
+        </thead>
+        <tbody id="vols-table">
+        </tbody>
+    </table>
+
+    <script>
+        
+        fetch('http://localhost:3000/vols')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('vols-table');
+                data.forEach(vol => {
+                    const row = `
+                        <tr>
+                            <td>${vol.id}</td>
+                            <td>${vol.nom_avion}</td>
+                            <td>${vol.type_avion}</td>
+                            <td>${vol.nbr_place}</td>
+                            <td>${vol.ville_depart}</td>
+                            <td>${vol.destination}</td>
+                            <td>${vol.date}</td>
+                            <td>${vol.heure_depart}</td>
+                            <td>${vol.heure_arrivee}</td>
+                            <td>${vol.nbr_escale}</td>
+                        </tr>
+                    `;
+                    table.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    </script>
+</body>
+</html>

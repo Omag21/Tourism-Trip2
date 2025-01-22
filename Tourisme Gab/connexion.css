@@ -1,0 +1,118 @@
+
+
+body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    background-color: #e9ecef; 
+    background-image: url('form_connexion.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+   width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out; /* Animation */
+    transform: scale(1); 
+}
+
+
+.container.active {
+    transform: scale(1.1); 
+   
+}
+
+.text-center {
+    text-align: center; 
+    color: #87CEFA; 
+    margin-left: 30px; 
+    padding: 10px; 
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden;
+    
+    display: block; 
+    max-width: 100%; 
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #87CEFA;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /*background: linear-gradient(135deg, #87CEFA, #D3D3D3); */
+    /*background: url('https://img.freepik.com/photos-gratuite/abstrait-numerique-grille-fond-noir_53876-97647.jpg?ga=GA1.1.494442778.1732746828&semt=ais_hybrid'); */
+    background: rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+    height: 300px;
+  }
+
+.form-control{
+    width: 350px;
+    margin-left: 50px;
+    overflow: auto;
+
+}
+.form-control:hover{
+    overflow: hidden;
+    transform: scale(1.05);
+}
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:hover {
+    transform: scale(1.05);
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+
+input:focus {
+    transform: scale(1.1); 
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); 
+    outline: none; 
+}
+
+
+button{
+    margin-left: 10px;
+    transition: 0.5s;
+    height: 30px;
+}
+.btn1{
+    background-color: aqua;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.btn1:hover{
+    letter-spacing: 2px;
+   
+    
+}
+
+.mt-3 a{
+    color: red;
+}
+.mt-3{
+    color: black;
+}

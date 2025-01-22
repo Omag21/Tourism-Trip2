@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="Accueil.js" defer></script>
+    <script src="path/to/your/script.js" defer></script>
+    <link rel="stylesheet" href="Accueil.css">
+   
+    <title>Tourism Trip</title>
+</head>
+<body onload="DemarreDefilement()">
+    <!-- Partie Main -->
+    <div class="container mt-5" >
+        <div class="main active">
+            <div class="topbar" style=" background-color:#669bbc;">
+             <!--   <div class="toggle" >
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div> -->
+                <div class="search">
+                    <label for="">
+                        <input type="text" id="searchInput" placeholder="Rechercher" onkeyup="searchFunction()">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="reserver">
+                    <ul>
+                        <li><a href="#Reserver" data-translate-key="reserveTitle">Réserver</a></li>
+                    </ul>
+                </div>
+                <div class="language">
+                    <ion-icon name="language-outline"></ion-icon>
+                    <select id="languageSelect" class="language-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <div class="user">
+                    <img src="image_utilisateur.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="debut">
+            <h1 id="site_1"><em>Tourism Trip</em></h1>
+            <p class="P" data-translate-key="welcomeMessage" id="site_2">
+              Bienvenue sur notre site Tourism Trip, Nous vous souhaitons de découvrir des endroits merveilleux et de vivre des expériences inoubliables avec nos équipes d'accompagnement.
+            </p>
+          </div>
+          <div class="cadre-container">
+        <!-- Cadres pour les images défilantes -->
+        <div id="cadre" class="cadre">
+            <img src="" alt="" style="width: 100%; height: 450px;">
+            <p id="text-cadre"></p>
+        </div>
+        <div id="cadre1" class="cadre">
+            <img src="" alt="" style="width: 100%; height: 450px;">
+            <p id="text-cadre1"></p> 
+        </div>
+        <div id="cadre2" class="cadre">
+            <img src="" alt="" style="width: 100%; height: 450px;">
+            <p id="text-cadre2"></p> 
+        </div>
+    </div>
+    
+    </section>
+
+
+    <section class="dest">
+      <div class="container">
+        <div id="Destination">
+            <h3 class="text_dest" data-translate-key="siteTitle" id="destinations">Nos Destinations</h3>
+            <table class="tab">
+                <thead>
+                    <tr>
+                    <th>Site</th>
+                    <th>Date Aller</th>
+                    <th>Date Retour</th>
+                    <th>Durée du Séjour</th>
+                    <th>Prix du Billet</th>
+                    <th>Pays</th>
+                </tr>
+                </thead>
+                <tbody id="userSiteList">
+                    
+                </tbody>
+            </table>
+            
+        </div>
+   
+    </section>
+
+    <section>
+        <div class="ville" id="villes">
+            <h2 class="hville">Nos villes les plus visitées</h2>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Ville</th>
+                        <th>Pays</th>
+                        <th>Région</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Libreville</td>
+                        <td>Gabon</td>
+                        <td>Afrique Centrale</td>
+                    </tr>
+                    <tr>
+                        <td>Casablanca</td>
+                        <td>Maroc</td>
+                        <td>Afrique du Nord</td>
+                    </tr>
+                    <tr>
+                        <td>Québec</td>
+                        <td>Canada</td>
+                        <td>Amérique du Nord</td>
+                    </tr>
+                    <tr>
+                        <td>Barcelone</td>
+                        <td>Espagne</td>
+                        <td>Europe du Sud-Ouest</td>
+                    </tr>
+                    <tr>
+                        <td>Paris</td>
+                        <td>France</td>
+                        <td>Europe de l'Ouest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+
+    <section>
+        <div id="Reserver" >
+            <h3 class="reserve" data-translate-key="reserveFormTitle">Réserver une destination</h3>
+
+            <form action="http://localhost:3000/formulaire-reservation" method="POST" class="container">
+                <fieldset>
+                    <legend data-translate-key="formLegend">Remplir les champs</legend>
+                  <label for="nom">Nom:</label>
+                  <input type="text" name="nom" id="nom" data-translate-key="nameLabel" placeholder="Nom" required>
+                  <br>
+                  <br>
+                  <label for="prenom">Prénom:</label>
+                  <input type="text" name="prenom" id="prenom" data-translate-key="surnameLabel" placeholder="Prénom" required>
+                  <br>
+                  <br>
+                  <label for="phone">Tel:</label>
+                  <input type="tel" name="phone" id="phone" data-translate-key="phoneLabel" placeholder="Téléphone" required>
+                  <br>
+                  <br>
+                  <label for="adresse">Adresse:</label>
+                  <input type="text" name="adresse" id="adresse" data-translate-key="adresseLabel" placeholder="Ville, Pays" required>
+                  <br>
+                  <br>
+                  <label for="email">Email:</label>
+                  <input type="email" name="email" id="email" data-translate-key="emailLabel" placeholder="Email" required>
+                  <br>
+                  <br>
+                  <label for="dateAller">Date Aller:</label>
+                  <input type="date" name="dateAller" id="dateAller" data-translate-key="dateLabel" required>
+                  <br>
+                  <br>
+                  <label for="dateRetour">Date Retour:</label>
+                  <input type="date" name="dateRetour" id="dateRetour" data-translate-key="dateLabel" required>
+                  <br>
+                  <br>
+                  <label for="site" data-translate-key="siteLabel">Sites:</label>
+                  <select name="site" id="site">
+                    <option value="gabon">Gabon</option>
+                    <option value="canada">Canada</option>
+                    <option value="maroc">Maroc</option>
+                    <option value="france">France</option>
+                    <option value="afrique_sud">Afrique du Sud</option>
+                    <option value="chine">Chine</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="singapour">Singapour</option>
+                    <option value="usa">USA</option>
+                    <option value="bahamas">Bahamas</option>
+                    <option value="tanzanie">Tanzanie</option>
+                    <option value="egypte">Égypte</option>
+                  </select>
+                  <br>
+                  <br>
+                  <button type="submit" value="Suivant" data-translate-key="submitButton">Suivant</button>
+                </fieldset>
+              </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="panel-footer" id="site_3">
+        <div class="container">
+            <div id="Propos">
+                <h1 class="H" data-translate-key="aboutUsTitle">Nous connaître</h1>
+                <br>
+                <p class="foot" data-translate-key="aboutUsText">
+                    Nous sommes une agence touristique, créée dépuis 2020. Nous proposons plusieurs destinations dans le monde à des prix variés.
+                    
+                </p>
+            </div>
+            <div>
+                <h3 data-translate-key="contactTitle"> Nous contacter</h3>
+                <ul>
+                    <li class="foot" data-translate-key="address">Adresse: Casablanca, Maroc, Rue Normandie 132</li>
+                    <li class="foot" data-translate-key="phone">Tel: +212 77-765-908</li>
+                    <li class="foot" data-translate-key="email">Email: gedeon@gmail.com</li>
+                </ul>
+            </div>
+            <div class="text-footer">&copy;Copyright Tourism Trip</div>
+        </div>
+        
+    </footer>
+
+    
+   
+
+    <!-- Icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+</html>

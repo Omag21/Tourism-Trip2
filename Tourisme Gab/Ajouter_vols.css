@@ -1,0 +1,92 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+:root{
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --blue1: #669bbc;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden; 
+    /*background: var(--white);  */
+    background-color: #96aeb6a0; 
+   
+}
+
+
+form{
+    
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border: 1px solid aqua;
+    background-image: url('ajouter_vol2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+    
+  }
+legend{
+    text-align: left;
+    color: aqua;
+}
+label{
+    left: 0px;
+    width: 20%;
+    height: 20px;
+    color: white;
+    font-size: 1.09rem;
+}
+input{
+    width: 380px;
+    background-color: rgbrgb(67, 205, 239);
+    border-color: aqua;
+    outline: none;
+}
+.submit{
+    margin-left: 20%;
+    line-height: 20px;
+    width: 75px;
+    background-color: rgbrgb(67, 205, 239);
+    border-color: aqua;
+}
+
+h3{
+    text-align: center;
+    padding: 30px;
+    color: var(--blue);
+}
+
+
+/* Pied de page */
+
+.panel-footer{
+    background-color: rgb(10, 54, 141);
+    padding-bottom: 10px;
+    margin-top: -300px;
+    width: 100%;
+ }
+ .H{
+     color: rgb(17, 217, 47);
+     margin-top: 500px;
+     text-align: center;
+     font-size: 1.6em;
+     font-family: 'Times New Roman', Times, serif;
+ }
+ .text-footer{
+     color: white;
+ }
+ h3{
+     color: var(--blue1);
+ 
+ }
+ .foot{
+     color: #fff;
+ }

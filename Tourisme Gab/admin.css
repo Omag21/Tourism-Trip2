@@ -1,0 +1,116 @@
+body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    background-color: #e9ecef; 
+    background-image: url('tour.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+.form-label{
+    color: black;
+    margin-left: 10px;
+    font-size: 1.2em;
+    
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form{
+    background-color: aliceblue;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 310px;
+    border-radius: 20px;
+    padding: 20px;
+    
+}
+.form-control{
+    width: 350px;
+    margin-left: 100px;
+    overflow: auto;
+
+}
+.form-control:hover{
+    overflow: hidden;
+    transform: scale(1.05);
+}
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 30px;
+}
+
+input:hover {
+    transform: scale(1.05);
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+
+input:focus {
+    transform: scale(1.1); 
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); 
+    outline: none; 
+}
+
+
+button{
+    margin-left: 10px;
+    transition: 0.5s;
+    height: 30px;
+}
+.btn1{
+    background-color: aqua;
+    border-radius: 10px;
+}
+.btn1:hover{
+    letter-spacing: 2px;
+   
+    
+}
+
+
+.container {
+    max-width: 750px;
+    margin-left: 90px ;
+    margin-top: 150px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out; 
+    transform: scale(1); 
+}
+
+
+.container.active {
+    transform: scale(1.1); 
+   
+}
+
+.text-center {
+    text-align: center; 
+    color: greenyellow; 
+    margin-left: 400px; 
+    padding: 10px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    
+    display: block; 
+    max-width: 100%; 
+}

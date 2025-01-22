@@ -1,0 +1,480 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Design de la partie latérale */
+*{
+    font-family: "Ubuntu", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
+:root{
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+   
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+/*Barre de navigation */
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue); 
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+    overflow-y: auto;
+    left: 0;
+
+}
+.navigation::-webkit-scrollbar {
+    width: 8px;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    background-color: var(--black2); /* Personnalisation du style de la barre */
+    border-radius: 10px;
+}
+.navigation.active{
+    width: 80px;
+
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+    margin-top: 20px;
+
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+
+}
+.navigation ul li a:hover ,
+.navigation ul li.hovered a{
+    color: var(--blue);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 70px;
+    line-height: 65px;
+    text-align: center;
+
+}
+.navigation ul li a .icon icon-icon{
+    font-size: 1.75rem;
+
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/*-------Courbe à l'extérieure------*/
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50px;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* Main */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 1.2rem;
+}
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/* Design des cartes */
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+
+}
+.cardBox .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 200;
+    font-size: 2.2rem;
+    color: var(--blue);
+}
+
+.cardBox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+.cardBox .card .iconBx{
+    font-size: 3.5rem;
+    color: var(--black2);
+
+}
+.cardBox .card:hover{
+    background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx{
+color: var(--white);
+}
+
+
+.details {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne par défaut */
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.cardHeader h2 {
+    font-size: 1.5rem;
+}
+
+.cardHeader .btn {
+    font-size: 1rem;
+}
+
+/* Petits écrans */
+@media screen and (max-width: 768px) {
+    .details {
+        padding: 10px;
+    }
+
+    .cardHeader h2 {
+        font-size: 1.2rem;
+    }
+
+    .cardHeader .btn {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Partie formulaire*/
+
+form{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.siteForm {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #2a2185;
+    gap: 10px;
+    width: 350px;
+    margin-left: 20px;
+   
+}
+
+label{
+    margin-left: 10px;
+    font-size: 1.3em;
+
+}
+
+button{
+    background-color: #F0F8FF;
+    border: 2px solid #87CEEB;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 60px;
+    height: 25px;
+}
+
+/*Profile*/
+
+.profileUser {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 10px;
+    margin-bottom: 15px;
+   
+}
+
+.profileUser.show {
+    display: block;
+    opacity: 1;
+}
+.profile {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 700px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px; 
+    gap: 10px; 
+}
+.profile label {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.profile input {
+    width: 100%; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.profile legend {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.completer{
+    width: 130px;
+    background-color: #87CEEB;
+}
+
+
+/* Passagers désiistant*/
+
+
+    .Annuler {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    td {
+        background-color: #ffffff;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    
+    td {
+        color: #555;
+    }
+
+    
+    th {
+        font-weight: bold;
+    }
+
+    
+    tr:hover td {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+
+    #pagination {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+      }
+      
+      .nav-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .nav-btn:hover {
+        background-color: #45a049;
+      }
+      

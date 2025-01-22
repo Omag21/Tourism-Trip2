@@ -1,0 +1,14 @@
+{
+    "fr": {
+        "reserveTitle": "Réserver",
+        "welcomeMessage": "Bienvenue sur notre site Tourism Trip.",
+        "aboutUsTitle": "Nous connaître",
+        "aboutUsText": "Nous sommes une agence touristique, créée depuis 2020."
+    },
+    "en": {
+        "reserveTitle": "Reserve",
+        "welcomeMessage": "Welcome to Tourism Trip.",
+        "aboutUsTitle": "About Us",
+        "aboutUsText": "We are a travel agency created in 2020."
+    }
+}

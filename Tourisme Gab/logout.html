@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déconnexion en cours...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .loading-container {
+            text-align: center;
+        }
+
+        .loading-container img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-container">
+        <img src="https://i.gifer.com/origin/81/814afbd1fc4922488037756c825ceb1d_w200.webp" alt="Chargement...">
+        <p class="message">Déconnexion en cours, veuillez patienter...</p>
+    </div>
+
+    <script>
+        
+        setTimeout(function() {
+            window.location.href = "connexion.html"; 
+        }, 2000);
+    </script>
+
+</body>
+</html>

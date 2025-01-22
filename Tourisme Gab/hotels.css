@@ -1,0 +1,189 @@
+body{
+    background-color: #0087ab;
+}
+
+/* Barre supérieure */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 60px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px 5px 35px;
+    font-size: 18px;
+    border: 1px solid var(--black2);
+    outline: none;
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Petits écrans */
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+}
+
+/* Section principale */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Design de la section de début */
+.debut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 5px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+}
+
+/* Style des titres */
+h1 {
+    color: aqua;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+/* Styles communs pour les cadres */
+.cadre {
+    position: relative;
+    width: 360px;
+    height: 350px;
+    border: 8px solid gray;
+    margin: 5px auto;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    top: 150px;
+}
+
+.cadre img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cadre p {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+#text-cadre,
+#text-cadre1,
+#text-cadre2{
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* Petits écrans */
+@media screen and (max-width: 768px) {
+    #cadre,
+    #cadre1,
+    #cadre2 {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+/* Grands écrans */
+@media screen and (min-width: 1201px) {
+    .container-cadres {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px; 
+    }
+
+    #cadre,
+    #cadre1,
+    #cadre2 {
+        width: 32%; 
+        margin: 0; 
+    }
+}
+
+
+/* Pied de page */
+
+.panel-footer{
+    background-color: rgb(10, 54, 141);
+    padding-bottom: 10px;
+    margin-top: 170px;
+    width: 100%;
+ }
+ .H{
+     color: rgb(17, 217, 47);
+     margin-top: 0px;
+     text-align: center;
+     font-size: 1.6em;
+     font-family: 'Times New Roman', Times, serif;
+ }
+ .text-footer{
+     color: white;
+ }
+ h3{
+     color: var(--blue1);
+ 
+ }
+ .foot{
+     color: #fff;
+ }

@@ -1,0 +1,37 @@
+<form action="/vol_utilisateur/modifier/{{reservationId}}" method="post" id="reserver">
+    <fieldset>
+        <legend>Modifier votre réservation</legend>
+        <label for="nom">Nom:</label>
+        <input class="labelForm" type="text" name="nom" id="nom" value="{{nom}}" required>
+        <br><br>
+
+        <label for="prenom">Prénom:</label>
+        <input class="labelForm" type="text" name="prenom" id="prenom" value="{{prenom}}" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input class="labelForm" type="email" name="email" id="email" value="{{email}}" required>
+        <br><br>
+
+        <label for="depart">Ville:</label>
+        <input class="labelForm" type="text" name="depart" id="depart" value="{{depart}}" required>
+        <br><br>
+
+        <label for="classe">Classe:</label>
+        <select name="classe" id="classe">
+            <option value="economique" {{classe === 'economique' ? 'selected' : ''}}>Classe économique</option>
+            <option value="affaire" {{classe === 'affaire' ? 'selected' : ''}}>Classe affaires</option>
+        </select>
+        <br><br>
+
+        <label for="site">Sélectionnez votre site:</label>
+        <select name="site_selectionne" id="site">
+            <option value="gabon" {{site_selectionne === 'gabon' ? 'selected' : ''}}>Gabon</option>
+            <option value="canada" {{site_selectionne === 'canada' ? 'selected' : ''}}>Canada</option>
+            <!-- Ajoutez ici les autres options -->
+        </select>
+        <br><br>
+
+        <button type="submit">Soumettre</button>
+    </fieldset>
+</form>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="test.js" defer></script>
+    <title>Réservations</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="reservation-section" class="reservation">
+        <h2>Formulaire de Réservation</h2>
+        <form id="reservation-form">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" placeholder="Nom" required><br><br>
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" placeholder="Prénom" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" required><br><br>
+            <label for="depart">Ville de départ:</label>
+            <input type="text" id="depart" placeholder="Ville de départ" required><br><br>
+            <label for="classe">Classe:</label>
+            <select id="classe">
+                <option value="economique">Classe économique</option>
+                <option value="affaire">Classe affaires</option>
+            </select><br><br>
+            <label for="site">Site:</label>
+            <select id="site">
+                <option value="gabon">Gabon</option>
+                <option value="canada">Canada</option>
+                <option value="maroc">Maroc</option>
+                <option value="france">France</option>
+            </select><br><br>
+            <button type="submit" id="submit-btn">Soumettre</button>
+        </form>
+    </section>
+
+    <h2>Liste des Réservations</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Ville de départ</th>
+                <th>Classe</th>
+                <th>Site</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="reservation-table-body">
+            <!-- Les lignes de réservation seront ajoutées ici -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="utilisateur.css">
+    <script src="utilisateur.js" defer></script>
+    <script src="modification_utilisateur.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <title>Tourism Trip - Page User</title>
+</head>
+<body onload="DemarreDefilement()">
+
+    <!-- Barre de navigation -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="logo-apple"></ion-icon>
+                        </span>
+                        <span class="title">Tourism Trip</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/vols/list_vols">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="title">Prochain départ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/vol_utilisateur/afficher">
+                        <span class="icon">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                        </span>
+                        <span class="title"> Consulter mes vols</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#reserver">
+                        <span class="icon">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                        </span>
+                        <span class="title">Réserver un vol </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="hotels.html">
+                        <span class="icon">
+                            <ion-icon name="bed"></ion-icon>
+                        </span>
+                        <span class="title">Hôtels</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#commentaire-container" id="show-comment-form">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Commentaire</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Paramètres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html" id="logout-link">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Déconnexion</span>
+                    </a>
+                </li>
+                
+            </ul>
+              <!-- Conteneur pour afficher le chargement -->
+              <div id="loading-spinner" class="hidden">
+                <div class="spinner"></div>
+            </div>
+        </div>  
+
+        <!-- Partie principale -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" id="toggleMenu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Rechercher">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="language">
+                    <ion-icon name="language-outline"></ion-icon>
+                    <select id="languageSelect" class="language-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <div class="user" >
+                    <img id="profileImage" src="image_utilisateur.jpeg" alt="Photo de profil">
+                    <label for="uploadImage" class="upload-label">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </label>
+                    <input type="file" id="uploadImage" class="upload-input" accept="image/*" hidden>
+                </div>
+            </div>
+
+           
+            <section class="container">
+                <div class="row">
+                    <h1><em>Tourism Trip</em></h1>
+                    <div class="container-cadres">
+                        <div id="cadre" class="cadre">
+                            <img src="image1.jpg" alt="Image 1"  style="width: 100%; height: 450px;">
+                            <p id="text-cadre">Texte alternatif 1</p>
+                        </div>
+                        <div id="cadre1" class="cadre">
+                            <img src="image2.jpg" alt="Image 2" style="width: 100%; height: 450px;">
+                            <p id="text-cadre1">Texte alternatif 2</p>
+                        </div>
+                        <div id="cadre2" class="cadre">
+                            <img src="image3.jpg" alt="Image 3"  style="width: 100%; height: 450px;">
+                            <p id="text-cadre2">Texte alternatif 3</p>
+                        </div>
+                        <div id="cadre3" class="cadre">
+                            <img src="image4.jpg" alt="Image 4"  style="width: 100%; height: 450px;">
+                            <p id="text-cadre3">Texte alternatif 3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reservation-section" class="reservation" style="display: none;">
+                <div class="container">
+                    <form action="utilisateur_vol.php" method="post" class="vols" id="reserver">
+                        <fieldset>
+                            <legend>Remplir correctement le formulaire</legend>
+                            <label  for="nom">Nom:</label>
+                            <input class="labelForm" type="text" name="nom" id="nom" placeholder="Nom" required>
+                            <br>
+                            <br>
+                            <label for="prenom">Prénom:</label>
+                            <input class="labelForm" type="text" name="prenom" id="prenom" placeholder="prenom" required>
+                            <br>
+                            <br>
+                            <label for="email">Email:</label>
+                            <input class="labelForm"  type="email" name="email" id="email" placeholder="Email" required>
+                            <br>
+                            <br>
+                            <label for="depart">Ville:</label>
+                            <input class="labelForm" type="text" name="depart" id="depart" placeholder="Ville de départ" required>
+                            <br>
+                            <br>
+                            <label for="classe">Classe</label>
+                            <select name="classe" id="classe">
+                                <option value="economique">Classe économique</option>
+                                <option value="affaire">Classe affaires</option>
+                            </select>
+                            <br>
+                            <br>
+                            <label for="site">Sélection votre site</label>
+                            <select name="site_selectionne" id="site">
+                                <option value="gabon">Gabon</option>
+                                <option value="canada">Canada</option>
+                                <option value="maroc">Maroc</option>
+                                <option value="france">France</option>
+                                <option value="afrique_sud">Afrique du Sud</option>
+                                <option value="chine">Chine</option>
+                                <option value="alaska">Alaska</option>
+                                <option value="singapour">Singapour</option>
+                                <option value="usa">USA</option>
+                                <option value="bahamas">Bahamas</option>
+                                <option value="tanzanie">Tanzanie</option>
+                                <option value="egypte">Égypte</option>
+                            </select>
+                            <br>
+                            <br>
+                            <button type="submit" id="submit-btn">Soummettre</button>
+                        </fieldset>
+                        
+                    </form>
+                </div>
+
+                
+            </section>
+
+            <div id="commentaire-container" class="commentaireForm">
+                <form action="commentaire.php" method="POST" id="commentForm" style="display: none;">
+                    <label class="labelForm" for="commentaire">Laisser votre commentaire</label>
+                    <textarea class="textareaForm" for="commentaire" name="commentaire" id="commentaire" required></textarea>
+                    <button class="btn1" type="submit">Envoyez</button>
+                </form>
+            </div>
+            
+            
+        </div>
+    </div>
+
+   <aside class="right">
+        <div class="container">
+            <div class="design">
+
+                <div class="button-with-date">
+                    <button type="button" class="btn btn-primary position-relative">
+                      <i class="fa fa-calendar"> Date</i>
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger  dateheure">
+                        <span id="dateTimeBadge"></span>
+                      </span>
+                    </button>
+                    
+                  
+                    <div id="dateDisplay" class="text-center mt-2 text-muted"></div>
+                  </div>
+
+                  <ul class="agenda" id="event-list">
+                    <li><a href="#" id="agenda-link">Mon agenda</a></li>
+                    <div id="agenda-form" style="display: none;">
+                        <form id="event-form" method="POST" action="agendaController.php" class="form">
+                            <input class="agenda1" type="text" id="titre" name="titre" placeholder="Titre" required>
+                            <input class="agenda1" type="date" id="date" name="date" required>
+                            <textarea class="agenda1" id="description" name="description" placeholder="Description" required></textarea>
+                            <button class="btn-agenda" type="submit" id="save-event">Enregistrer</button>
+                        </form>
+                    </div>
+                    <ul id="events-list"></ul>
+                </ul>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="agenda-table-body"></tbody>
+                </table>
+                
+            </div>
+        </div>
+    </aside> 
+
+    <script src="comment.js" defer></script>
+    <script src="Agenda.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+   <!-- <script>
+        document.getElementById("logout-link").addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            // Affiche le spinner de chargement
+            document.getElementById("loading-spinner").classList.remove("hidden");
+        
+            // Simule une déconnexion et redirection après 3 secondes
+            setTimeout(function() {
+                window.location.href = "connexion.html";  // Remplacez par votre route de déconnexion réelle
+            }, 3000);
+        });
+    </script> -->
+
+    
+
+</body>
+</html>
